@@ -1,0 +1,26 @@
+{
+  "in_process_scoring": {
+    "requests": 1000,
+    "mean_ms": 5.9,
+    "p50_ms": 5.38,
+    "p95_ms": 8.16,
+    "p99_ms": 8.67,
+    "max_ms": 42.87,
+    "throughput_per_s": 169.6
+  },
+  "http_round_trip_localhost": {
+    "requests": 1000,
+    "mean_ms": 7.15,
+    "p50_ms": 6.23,
+    "p95_ms": 10.43,
+    "p99_ms": 11.88,
+    "max_ms": 35.23,
+    "throughput_per_s": 139.9
+  },
+  "environment": {
+    "cpus": 2,
+    "platform": "Linux-6.18.44-fc-v230-x86_64-with-glibc2.39",
+    "python": "3.13.18"
+  },
+  "note": "Local, single-process, sequential requests. A cloud deployment adds network latency."
+}
