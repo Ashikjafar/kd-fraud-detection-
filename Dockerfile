@@ -17,6 +17,7 @@ RUN useradd --create-home appuser && mkdir -p runtime && chown -R appuser /app
 USER appuser
 
 EXPOSE 8000
+# Hosts such as Render set $PORT; it defaults to 8000 elsewhere.
 # The API refuses to listen on 0.0.0.0 unless FRAUD_API_KEYS is set, e.g.
 #   docker run -p 8000:8000 -e FRAUD_API_KEYS="adminkey:admin,analystkey:analyst,appkey:customer" <image>
-CMD ["python", "-m", "fraud_detection.api", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "python -m fraud_detection.api --host 0.0.0.0 --port ${PORT:-8000}"]
